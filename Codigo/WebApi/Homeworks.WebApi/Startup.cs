@@ -47,6 +47,11 @@ namespace Homeworks.WebApi
             services.AddScoped<IRepository<Exercise>, ExerciseRepository>();
             services.AddScoped<ISessionLogic, SessionLogic>();
 
+            //services.AddScoped<BuisnessLogicFactory>();
+            //services.AddLogic<IUserLogic>();
+            //services.AddLogic<IHomeworkLogic>();
+            //services.AddLogic<IExerciseLogic>();
+            //services.AddLogic<ISessionLogic>();
             services.AddCors(
                 options => { options.AddPolicy(
                     "CorsPolicy", 

@@ -21,25 +21,26 @@ namespace Homeworks.WebApi.Filters {
             {
                 context.Result = new ContentResult()
                 {
+                    StatusCode = 400,
                     Content = "Token is required",
                 };
             }
-            using (var sessions = GetSessions(context))
+            var sessions = GetSessions(context);
+            if (!sessions.IsValidToken(token))
             {
-                if (!sessions.IsValidToken(token))
+                context.Result = new ContentResult()
                 {
-                    context.Result = new ContentResult()
-                    {
-                        Content = "Invalid Token",
-                    };
-                }
-                if (!sessions.HasLevel(token, _role))
+                    StatusCode = 400,
+                    Content = "Invalid Token",
+                };
+            }
+            if (!sessions.HasLevel(token, _role))
+            {
+                context.Result = new ContentResult()
                 {
-                    context.Result = new ContentResult()
-                    {
-                        Content = "The user isen't " + _role,
-                    };
-                }
+                    StatusCode = 400,
+                    Content = "The user isen't " + _role,
+                };
             }
         }
 
