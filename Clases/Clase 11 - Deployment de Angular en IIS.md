@@ -2,7 +2,7 @@
 
 **Pasos para desplegar su proyecto de Angular en IIS:**
 
-Primero vamos a activar **CORS** en nuestra WebApi para poder comunicarnos con nuesto FrontEnd
+Primero vamos a activar **CORS** en nuestra WebApi para poder comunicarnos con nuestro FrontEnd
 
 ## Detalles Sobre CORS
 
@@ -14,9 +14,9 @@ Un ejemplo de solicitud de origen cruzado: El código JavaScript frontend de una
 Por razones de seguridad, los exploradores restringen las solicitudes HTTP de origen cruzado iniciadas dentro de un script. Por ejemplo, XMLHttpRequest y la API Fetch siguen la política de mismo-origen. Ésto significa que una aplicación que utilice esas APIs XMLHttpRequest sólo puede hacer solicitudes HTTP a su propio dominio a menos que se utilicen encabezados CORS.
 ```
 
-Para habilitar **CORS** en nuestra WebApi vamos a agregar el siguiente codigo en nuestra clase Startup.cs:
+Para habilitar **CORS** en nuestra WebApi vamos a agregar el siguiente código en nuestra clase Startup.cs:
 
-En el nuestro metodo:
+En el nuestro método:
 
 ```C#
 void ConfigureServices(IServiceCollection services)
@@ -95,19 +95,19 @@ public class Startup
 }
 ```
 
-Listo despues los pasos para deployar nuesta WebApi se mantienen para mas informacion haga clic [aqui](./Clase%207%20-%20Deployment%20en%20IIS.md).
+Listo después los pasos para deployar nuestra WebApi se mantienen para más información  haga clic [aquí](./Clase%207%20-%20Deployment%20en%20IIS.md).
 
-Ahora continuando con el deploy de nuestra aplicacion en Angular.
+Ahora continuando con el deploy de nuestra aplicación en Angular.
 
 ## Angular
 
-1) Primero vamos a lanzar el commando ```ng build --prod``` en la direccion base de nuestro proyecto de Angular.
+1) Primero vamos a lanzar el comando ```ng build --prod``` en la dirección base de nuestro proyecto de Angular.
 
 ![alt-text](..\imgs\angular-deploy\1.PNG)
 
-2) Como podran ver se genero en la carpeta dist en el path base de nuestra applicacion de Angular y en esta otra carpeta con el nombre del proyecto (en este caso ```HomeworksAngular```) que contiene nuestro codigo compilado. Esta es la carpeta que vamos a utilizar nuestro deploy.
+2) Como podrán ver se generó en la carpeta dist en el path base de nuestra aplicación de Angular y en esta otra carpeta con el nombre del proyecto (en este caso ```HomeworksAngular```) que contiene nuestro código compilado. Esta es la carpeta que vamos a utilizar nuestro deploy.
 
-3) Nos aseguramos que tenemos instalado el IIS (para informacion haga clic [aqui](./Clase%207%20-%20Deployment%20en%20IIS.md))
+3) Nos aseguramos que tenemos instalado el IIS (para más información  haga clic [aquí](./Clase%207%20-%20Deployment%20en%20IIS.md))
 
 4) Copiamos el proyecto (carpeta publish) y lo pegamos en C:\inetpub\wwwroot.
 
@@ -117,11 +117,11 @@ Ahora continuando con el deploy de nuestra aplicacion en Angular.
 
 ![alt-text](..\imgs\angular-deploy\2.PNG)
 
-7) Ahora para finalizar vamos a la carpeta en la que se encuentra nuestro deploy (en este caso ```HomeworksAngular```) y editamos de nombre **main**.(aqui un numeros).js y remplazamos los ```localhost``` por la ruta ruta web donde esta el deploy de nuestra WebApi por ejemplo: si hice el deploy de mi WebApi en http://192.168.1.103:3000 y en nuestro archivo encontramos http://localhost:5000 (que es donde se encuentra nuestra webapi cuando la ejecutamos para debug) remplazamos estos localhost por http://192.168.1.103:3000
+7) Ahora para finalizar vamos a la carpeta en la que se encuentra nuestro deploy (en este caso ```HomeworksAngular```) y editamos de nombre **main**.```(aquí un numeros)```.**js** y remplazamos los ```localhost``` por la direccion web donde está el deploy de nuestra WebApi por ejemplo: si hice el deploy de mi WebApi en http://192.168.1.103:3000 y en nuestro archivo encontramos http://localhost:5000 (que es donde se encuentra nuestra webapi cuando la ejecutamos para debug) remplazamos estos localhost por http://192.168.1.103:3000
 
 ![alt-text](..\imgs\angular-deploy\3.PNG)
 
-8) Reinciamos nuestro sitio y listo!
+8) Reiniciamos nuestro sitio y listo!
 
 # Mas Info
 
