@@ -103,7 +103,7 @@ Ahora continuando con el deploy de nuestra aplicación en Angular.
 
 1) Primero vamos a lanzar el comando ```ng build --prod``` en la dirección base de nuestro proyecto de Angular.
 
-![alt-text](..\imgs\angular-deploy\1.PNG)
+![image](../imgs/angular-deploy/1.PNG)
 
 2) Como podrán ver se generó en la carpeta dist en el path base de nuestra aplicación de Angular y en esta otra carpeta con el nombre del proyecto (en este caso ```HomeworksAngular```) que contiene nuestro código compilado. Esta es la carpeta que vamos a utilizar nuestro deploy.
 
@@ -115,11 +115,11 @@ Ahora continuando con el deploy de nuestra aplicación en Angular.
 
 6) Vamos a Sitios y agregamos un nuevo sitio web.. Colocamos el nombre del Sitio, seleccionamos el path y el port que vamos a utilizar. (En este caso no nos interesa cual es el Application pool)
 
-![alt-text](..\imgs\angular-deploy\2.PNG)
+![image](../imgs/angular-deploy/2.PNG)
 
 7) Ahora para finalizar vamos a la carpeta en la que se encuentra nuestro deploy (en este caso ```HomeworksAngular```) y editamos de nombre **main**.```(aquí un numeros)```.**js** y remplazamos los ```localhost``` por la direccion web donde está el deploy de nuestra WebApi por ejemplo: si hice el deploy de mi WebApi en http://192.168.1.103:3000 y en nuestro archivo encontramos http://localhost:5000 (que es donde se encuentra nuestra webapi cuando la ejecutamos para debug) remplazamos estos localhost por http://192.168.1.103:3000
 
-![alt-text](..\imgs\angular-deploy\3.PNG)
+![image](../imgs/angular-deploy/3.PNG)
 
 8) Reiniciamos nuestro sitio y listo!
 
