@@ -373,8 +373,8 @@ Viendo visto el proceso, procedemos a hacer el routing:
 ### 0) Creando el Welcome Component
 
 Como para ver el routing precisamos al menos otro componente, haremos el ```WelcomeComponent``` (menú inicial).
-
-```Para el HTML:
+Para el HTML:
+```HTML
 <div class="panel panel-primary">
     <div class="panel-heading">
         {{pageTitle}}
