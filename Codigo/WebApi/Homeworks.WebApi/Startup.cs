@@ -47,11 +47,16 @@ namespace Homeworks.WebApi
             services.AddScoped<IRepository<Exercise>, ExerciseRepository>();
             services.AddScoped<ISessionLogic, SessionLogic>();
 
-            //services.AddScoped<BuisnessLogicFactory>();
-            //services.AddLogic<IUserLogic>();
-            //services.AddLogic<IHomeworkLogic>();
-            //services.AddLogic<IExerciseLogic>();
-            //services.AddLogic<ISessionLogic>();
+            services.AddCors(
+                options => { options.AddPolicy(
+                    "CorsPolicy", 
+                    builder => builder
+                        .AllowAnyOrigin()
+                        .AllowAnyMethod()
+                        .AllowAnyHeader()
+                        .AllowCredentials()
+                );
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -61,6 +66,7 @@ namespace Homeworks.WebApi
             {
                 app.UseDeveloperExceptionPage();       
             }
+            app.UseCors("CorsPolicy");
             app.UseMvc();
         }
     }
