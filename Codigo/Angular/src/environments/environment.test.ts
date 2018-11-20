@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   urlBackend: 'http://localhost:5000/api/',
-  envName: 'DEV'
+  envName: 'TEST'
 };
 
 /*

@@ -7,6 +7,7 @@ import { Homework } from '../models/Homework';
 export class HomeworksFilterPipe implements PipeTransform {
 
   transform(list: Array<Homework>, arg: string): Array<Homework> {
+    if (!list) return [];
     return list.filter(
       x => x.description.toLocaleLowerCase()
         .includes(arg.toLocaleLowerCase())
